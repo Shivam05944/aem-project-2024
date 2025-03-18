@@ -1,0 +1,16 @@
+<div data-sly-use.bankcard="com.myproject.core.models.BankCard">
+    <div>
+        <img src="${bankcard.image}"/>
+        <h2 class="title">${bankcard.title}</h2>
+        <h3 class="header">${bankcard.header}</h3>
+        ${bankcard.subHeader @ context='html'}
+        <div class="form-item">
+            <div data-sly-list.item="${bankcard.forms}">
+                <a href="${item.imagePath}">
+                    <img src="${item.imagePath}" alt="${item.imageTitle}"/>
+                </a>
+                <h3>${item.imageTitle}</h3>
+            </div>
+        </div>
+    </div>
+</div>

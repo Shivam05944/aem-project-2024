@@ -1,0 +1,13 @@
+<div data-sly-use.byline="com.myproject.core.models.Byline" class=" cmp-byline">
+    <h1>Profile</h1>
+    <div class="cmp-byline__image">
+        <img src="${byline.imagePath}"/>
+    </div>
+    <h2 class="cmp-byline__name">
+        ${byline.name}
+    </h2>
+    <p class="cmp-byline__occupations">${byline.occupations @ join=', '}</p>
+
+</div>
+
+

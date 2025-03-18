@@ -1,0 +1,16 @@
+<div data-sly-use.multimage="com.myproject.core.models.MultImage" class="component">
+
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html" />
+    <sly data-sly-call="${clientLib.css @ categories='clientlib-multi'}"/>
+    <sly data-sly-call="${clientLib.js @ categories='clientlib-multi'}"/>
+
+    <div class="form-list">
+        <div data-sly-list="${multimage.form}">
+            <div class="form-item-image" data-sly-test="${item.fileReference}">
+                <img src="${item.fileReference}"/>
+                <h1>${item.name}</h1>
+                <p>${item.description}</p>
+            </div>
+        </div>
+    </div>
+</div>

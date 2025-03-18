@@ -1,0 +1,17 @@
+<div data-sly-use.box = "com.myproject.core.models.Box" class="component">
+    <div class="video">
+        <iframe width="560" height="315" src="${box.video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="header">
+        <h3>${box.title}</h3>
+        <h1>${box.subtitle}</h1>
+    </div>
+    <div data-sly-test="${box.description}">
+        <p>${box.description}</p>
+    </div>
+    <div class="register">
+        <a href="${box.learnMoreLink}" class="learn-More-button" target="_blank">
+            learn More
+        </a>
+    </div>
+</div>

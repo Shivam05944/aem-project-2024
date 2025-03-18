@@ -1,0 +1,21 @@
+<sly data-sly-use.clientlib="core/wcm/components/commons/v1/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.css @ categories='myproject.click'}"/>
+</sly>
+<sly data-sly-resource="${'contexthub' @ resourceType='granite/contexthub/components/contexthub'}"/>
+
+<div data-sly-use.clickimage="com.myproject.core.models.ClickImage" class="component">
+    <div>
+        <div data-sly-list="${clickimage.form}">
+            <div data-sly-list.imagePath="${item.files}">
+                <img src="${imagePath}" alt="Image"/>
+            </div>
+            <div class="form-item">
+                <h3 data-sly-test="${item.text}">${item.text}</h3>
+                <p>${item.description}</p>
+                <a href="${item.registerLink}">
+                    ${item.label}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

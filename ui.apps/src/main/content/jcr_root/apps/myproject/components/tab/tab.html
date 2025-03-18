@@ -1,0 +1,13 @@
+<div data-sly-use.tab="com.myproject.core.models.Tab" class="component">
+    <h1>${tab.heading}</h1>
+    <div class="form-list">
+        <div data-sly-list="${tab.form}">
+            <div class="form-item-image" data-sly-test="${item.fileReference}">
+                <img src="${item.fileReference}"/>
+                <h2>${item.title}</h2>
+                <h3>${item.subTitle}</h3>
+                <p>${item.description}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div data-sly-use.imagedescription="com.myproject.core.models.ImageDescription">
+    <sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+         data-sly-call="${clientLib.all @ categories='clientlib-multi'}"/>
+    <sly data-sly-resource="${'path' @ resourceType='myproject/components/description'}" />
+    <div class="imagedescription-container">
+        <div class="imagedescription-content">
+            <h1>${imagedescription.title}</h1>
+            <h3>${imagedescription.description}</h3>
+            <a href="${imagedescription.registerLink}">${imagedescription.label}</a>
+        </div>
+        <div class="imagedescription-image">
+            <img src="${imagedescription.fileReference}" alt="${imagedescription.title}">
+        </div>
+    </div>
+</div>

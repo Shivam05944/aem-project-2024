@@ -1,0 +1,45 @@
+.component {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1a1a2e; /* Dark blue theme */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.form-item-image {
+    background-color: #16213e;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.form-item-image:hover {
+    transform: translateY(-5px);
+}
+
+.form-item-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.form-item-image h1 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-top: 10px;
+    font-weight: 600;
+}

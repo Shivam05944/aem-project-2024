@@ -1,0 +1,14 @@
+<div data-sly-use.taglist="com.myproject.core.models.TagList">
+    <div class="tagList">
+        <h2>${taglist.websites}</h2>
+        <h2>${taglist.tags}</h2>
+        <h2>${taglist.name}</h2>
+        <!-- <h2>${taglist.datepicker}</h2>-->
+        <h2>Filtered Pages: ${taglist.filteredPages}</h2>
+        <h2>Filtered Pages by Name: ${taglist.pagesByName}</h2>
+        <h2>Filtered Pages by Date: ${taglist.pagesByDate}</h2>
+        <div data-sly-list.imageReference="${taglist.fileReference}">
+            <img src="${imageReference}" alt="Image ${imageReference}"/>
+        </div>
+    </div>
+</div>

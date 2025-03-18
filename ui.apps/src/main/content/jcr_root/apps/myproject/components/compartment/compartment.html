@@ -1,0 +1,20 @@
+<div data-sly-use.compartment="com.myproject.core.models.Compartment" class="component">
+    <h1>${compartment.heading}</h1>
+    <h1>${compartment.subHeading}</h1>
+    <a href="${compartment.button}">
+        ${compartment.buttonLabel}
+    </a>
+    <div class="form-list">
+        <div data-sly-list="${compartment.form}">
+            <div class="form-item-image" data-sly-test="${item.fileReference}">
+                <img src="${item.fileReference}"/>
+                <h2>${item.title}</h2>
+                <h3>${item.subTitle}</h3>
+                <p>${item.description}</p>
+                <a href="${item.registerLink}">
+                    ${item.label}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

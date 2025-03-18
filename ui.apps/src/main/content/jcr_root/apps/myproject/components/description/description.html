@@ -1,0 +1,48 @@
+<div data-sly-use.description="com.myproject.core.models.Description" class="component">
+    <style>
+        .component .image img {
+          width: 600px;
+          height: auto;
+          max-width: 100%;
+        }
+    </style>
+    <div class="image">
+        <img src="${description.fileReference}"/>
+    </div>
+    <div class="header">
+        <h2>${description.title}</h2>
+        <h3>${description.subtitle}</h3>
+        <p class="datetime">${description.datetime}</p>
+    </div>
+    <div class="description">
+        <p>${description.description}</p>
+    </div>
+    <div class="register">
+        <a href="${description.registerLink}" class="register-button" target="_blank">
+            Register now
+        </a>
+    </div>
+    <div class="form-list">
+        <div data-sly-list="${description.form}">
+                <style>
+                    .component .form-item-image img {
+                      width: 600px;
+                      height: auto;
+                      max-width: 100%;
+                    }
+                </style>
+                <div class="form-item-image" data-sly-test="${item.fileReference}">
+                    <img src="${item.fileReference}" alt="${item.title}"/>
+                </div>
+                <div class="form-item">
+                    <h3 data-sly-test="${item.title}">${item.title}</h3>
+                    <h4 data-sly-test="${item.subtitle}">${item.subtitle}</h4>
+                    <p data-sly-test="${item.description}">${item.description}</p>
+                    <p data-sly-test="${item.datetime}" class="datetime">${item.datetime}</p>
+                    <a data-sly-test="${item.registerLink}" href="${item.registerLink}" target="_blank">
+                        Register now
+                    </a>
+                </div>
+        </div>
+    </div>
+</div>

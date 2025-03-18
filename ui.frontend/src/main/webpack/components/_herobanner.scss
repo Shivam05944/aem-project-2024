@@ -1,0 +1,37 @@
+.component {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1a; /* Dark background */
+    padding: 50px 20px;
+}
+
+.hero-banner {
+    max-width: 1200px;
+    text-align: center;
+    color: #ffffff; /* White text */
+}
+
+.hero-banner img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.hero-banner h1 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.hero-banner p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    opacity: 0.8;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
