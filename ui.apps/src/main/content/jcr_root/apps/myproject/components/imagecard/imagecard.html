@@ -1,10 +1,12 @@
 <div data-sly-use.imagecard="com.myproject.core.models.ImageCard">
-    <h1>${imagecard.allPageTitles}</h1>
-    <h1>${imagecard.allPageDescriptions}</h1>
-
-    <div data-sly-list.imageReference="${imagecard.fileReference}">
-        <img src="${imageReference}" alt="Image ${imageReference}"/>
+   <!-- <h1>${imagecard.allPageTitles}</h1>
+    <h1>${imagecard.allPageDescriptions}</h1>-->
+    <!--<h1>${imagecard.allPage}</h1>-->
+    <div data-sly-list.title="${imagecard.pageTitles}">
+        <h1>${title}</h1>
     </div>
 
-
+    <!--<div data-sly-list.imageReference="${imagecard.fileReference}">
+        <img src="${imageReference}" alt="Image ${imageReference}"/>
+    </div>-->
 </div>

@@ -21,6 +21,20 @@
                             name="./pagePath"
                             required="{Boolean}true"
                             rootPath="/content/myproject/us/en"/>
+                    <value
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Value"
+                            fieldDescription="Enter the state value"
+                            emptyText="Value"
+                            name="./value"
+                            required="{Boolean}true"/>
+                    <tags
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="cq/gui/components/coral/common/form/tagfield"
+                            fieldLabel="Filter by Tags"
+                            name="./tags"
+                            multiple="{Boolean}true"/>
                 </items>
             </column>
         </items>

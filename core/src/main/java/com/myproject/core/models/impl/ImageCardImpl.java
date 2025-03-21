@@ -2,16 +2,20 @@ package com.myproject.core.models.impl;
 
 import com.day.cq.wcm.api.Page;
 import com.myproject.core.models.ImageCard;
+import com.myproject.core.models.PageService;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import javax.inject.Inject;
+import javax.jcr.RepositoryException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -21,10 +25,39 @@ public class ImageCardImpl implements ImageCard {
     private SlingHttpServletRequest request;
     @ValueMapValue
     private String pagePath;
+    @ValueMapValue
+    private String value;
+    @ValueMapValue
+    private String[] tags;
     @Inject
     private Page currentPage;
     @Inject
     private ResourceResolver resourceResolver;
+    @OSGiService
+    private PageService pageService;
+
+    public List<String> getAllPage() {
+        try {
+            return pageService.getPages(pagePath, value, tags, resourceResolver);
+        } catch (RepositoryException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<String> getPageTitles() {
+        List<String> pageTitles = new ArrayList<>();
+        try {
+            List<String> pagePaths = pageService.getPages(pagePath, value, tags, resourceResolver);
+            for (String path : pagePaths) {
+                Page page = resourceResolver.resolve(path).adaptTo(Page.class);
+                pageTitles.add(page.getTitle());
+            }
+        } catch (RepositoryException e) {
+            throw new RuntimeException(e);
+        }
+        return pageTitles;
+    }
+
 
     @Override
     public List<String> getAllPageTitles() {

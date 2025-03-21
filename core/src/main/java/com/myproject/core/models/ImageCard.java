@@ -15,4 +15,5 @@ public interface ImageCard {
     List<String> getFileReference();
 
     List<String> getAllPageDescriptions();
+    List<String> getAllPage();
 }
