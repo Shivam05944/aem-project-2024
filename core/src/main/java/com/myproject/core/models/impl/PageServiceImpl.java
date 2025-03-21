@@ -32,8 +32,9 @@ public class PageServiceImpl implements PageService {
         map.put("group.property.1_value", value);
         map.put("group.property.2_value", value1);
         map.put("group.1_property", "jcr:content/cq:tags");
-        map.put("group.1_property.1_value", tags[0]);
-        map.put("group.1_property.2_value", tags[1]);
+        for (int i = 0; i < tags.length; i++) {
+            map.put("group.1_property." + (i + 1) + "_value", tags[i]);
+        }
 
         map.put("group.p.or", "true");
         map.put("orderby", "@jcr:content/cq:lastModified");
