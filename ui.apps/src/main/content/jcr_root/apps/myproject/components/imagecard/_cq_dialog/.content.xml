@@ -29,6 +29,14 @@
                             emptyText="Value"
                             name="./value"
                             required="{Boolean}true"/>
+                    <value1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Value1"
+                            fieldDescription="Enter the state value1"
+                            emptyText="Value1"
+                            name="./value1"
+                            required="{Boolean}true"/>
                     <tags
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="cq/gui/components/coral/common/form/tagfield"

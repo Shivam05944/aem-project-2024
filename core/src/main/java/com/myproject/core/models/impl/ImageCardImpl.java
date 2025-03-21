@@ -28,6 +28,8 @@ public class ImageCardImpl implements ImageCard {
     @ValueMapValue
     private String value;
     @ValueMapValue
+    private String value1;
+    @ValueMapValue
     private String[] tags;
     @Inject
     private Page currentPage;
@@ -38,7 +40,7 @@ public class ImageCardImpl implements ImageCard {
 
     public List<String> getAllPage() {
         try {
-            return pageService.getPages(pagePath, value, tags, resourceResolver);
+            return pageService.getPages(pagePath, value, value1, tags, resourceResolver);
         } catch (RepositoryException e) {
             throw new RuntimeException(e);
         }
@@ -47,7 +49,7 @@ public class ImageCardImpl implements ImageCard {
     public List<String> getPageTitles() {
         List<String> pageTitles = new ArrayList<>();
         try {
-            List<String> pagePaths = pageService.getPages(pagePath, value, tags, resourceResolver);
+            List<String> pagePaths = pageService.getPages(pagePath, value, value1, tags, resourceResolver);
             for (String path : pagePaths) {
                 Page page = resourceResolver.resolve(path).adaptTo(Page.class);
                 pageTitles.add(page.getTitle());

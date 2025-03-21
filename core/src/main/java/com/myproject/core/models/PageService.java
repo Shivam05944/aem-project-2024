@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface PageService {
 
-    List<String> getPages(String pagePath, String value, String[] tags, ResourceResolver resourceResolver) throws RepositoryException;
+    List<String> getPages(String pagePath, String value, String value1, String[] tags, ResourceResolver resourceResolver) throws RepositoryException;
 }

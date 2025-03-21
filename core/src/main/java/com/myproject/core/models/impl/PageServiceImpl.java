@@ -21,7 +21,7 @@ public class PageServiceImpl implements PageService {
     private QueryBuilder builder;
 
     @Override
-    public List<String> getPages(String pagePath, String value, String[] tags, ResourceResolver resourceResolver) throws RepositoryException {
+    public List<String> getPages(String pagePath, String value, String value1,String[] tags, ResourceResolver resourceResolver) throws RepositoryException {
         List<String> pageList = new ArrayList<>();
 
         Map<String, String> map = new HashMap<>();
@@ -29,9 +29,11 @@ public class PageServiceImpl implements PageService {
         map.put("type", "cq:Page");
 
         map.put("group.property", "jcr:content/jcr:title");
-        map.put("group.property.value", value);
+        map.put("group.property.1_value", value);
+        map.put("group.property.2_value", value1);
         map.put("group.1_property", "jcr:content/cq:tags");
-        map.put("group.1_property.value", tags[0]);
+        map.put("group.1_property.1_value", tags[0]);
+        map.put("group.1_property.2_value", tags[1]);
 
         map.put("group.p.or", "true");
         map.put("orderby", "@jcr:content/cq:lastModified");
