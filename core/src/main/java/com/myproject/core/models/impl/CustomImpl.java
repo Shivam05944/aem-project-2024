@@ -46,5 +46,14 @@ public class CustomImpl implements Custom {
         Page page = resource.adaptTo(Page.class);
         return page.getDescription();
     }
+
+    @Override
+    public String getAbout() {
+        PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
+        Page page = pageManager.getPage(pagePath);
+        Resource contentResource = page.getContentResource();
+        return contentResource.getValueMap().get("about", String.class);
+    }
+
 }
 

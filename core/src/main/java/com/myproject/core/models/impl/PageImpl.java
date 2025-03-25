@@ -13,9 +13,16 @@ public class PageImpl implements Page {
 
     @ValueMapValue
     public String fileReference;
+    @ValueMapValue
+    public String about;
 
     @Override
     public String getFileReference() {
         return fileReference;
+    }
+
+    @Override
+    public String getAbout() {
+        return about;
     }
 }
