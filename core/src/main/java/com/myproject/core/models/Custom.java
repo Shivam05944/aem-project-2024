@@ -8,5 +8,8 @@ public interface Custom {
     String getPageTitle();
 
     String getPageDiscription();
+
     String getAbout();
+
+    String getTitle();
 }

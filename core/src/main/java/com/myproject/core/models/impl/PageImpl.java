@@ -25,4 +25,5 @@ public class PageImpl implements Page {
     public String getAbout() {
         return about;
     }
+
 }
