@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<sly data-sly-use.demo="com.myproject.core.models.SearchImage" />
+<div class="image-gallery" data-sly-list.img="${demo.demoImage}">
+    <img src="${img}" alt="Demo Image" />
+</div>
