@@ -1,4 +1,9 @@
-<sly data-sly-use.demo="com.myproject.core.models.SearchImage" />
+<sly data-sly-use.demo="com.myproject.core.models.SearchImage"/>
+<sly data-sly-use.clientLib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-call="${clientLib.all @ categories='clientlib-searchimage'}"/>
 <div class="image-gallery" data-sly-list.img="${demo.demoImage}">
-    <img src="${img}" alt="Demo Image" />
+    <img src="${img}" alt="Demo Image"/>
+</div>
+<div>
+    <p>This is the dynamic image component.</p>
 </div>
